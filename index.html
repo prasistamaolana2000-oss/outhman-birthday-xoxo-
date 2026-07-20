@@ -99,10 +99,23 @@ p{
     font-family:'Playfair Display',serif;
 }
 
-.music-player iframe{
+.video-container{
+    position:relative;
     width:100%;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
     border-radius:8px;
+}
+
+.video-container iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     border:none;
+    border-radius:8px;
 }
 
 .signature{
@@ -150,8 +163,10 @@ p{
     <h1>Happy Birthday, Outhman ❤️</h1>
 
     <div class="music-player">
-        <h3>🎵 A Song for You</h3>
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/search%3Fq%3DPamungkas%2520Only%2520One&color=%23c4a0a8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <h3>🎵 Pamungkas - Only One</h3>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/D_7aKxvN8x8" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
 
     <div class="section">
