@@ -203,6 +203,11 @@ p{
     font-family:'Playfair Display',serif;
 }
 
+.audio-player{
+    width:100%;
+    margin-top:10px;
+}
+
 .video-container{
     position:relative;
     width:100%;
@@ -211,6 +216,7 @@ p{
     overflow:hidden;
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
+    display:none;
 }
 
 .video-container iframe{
@@ -275,9 +281,9 @@ p{
 
     <div class="music-player">
         <h3>🎵 Pamungkas - One Only</h3>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/I5sKt6_zdvw?autoplay=1&mute=0" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <audio id="bgMusic" class="audio-player" controls autoplay loop>
+            <source src="https://www.youtube.com/watch?v=I5sKt6_zdvw" type="audio/mpeg">
+        </audio>
     </div>
 
     <div class="section">
@@ -353,6 +359,18 @@ p{
 </div>
 
 <script>
+// Autoplay musik
+window.addEventListener('load', function() {
+    const audio = document.getElementById('bgMusic');
+    audio.volume = 0.5;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            console.log('Autoplay failed, user interaction required');
+        });
+    }
+});
+
 function createHeart(){
     const heart=document.createElement("div");
     heart.className="heart";
