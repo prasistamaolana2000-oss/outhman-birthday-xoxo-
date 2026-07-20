@@ -15,10 +15,9 @@
 }
 
 body{
-    background-image:url('https://images.unsplash.com/photo-1578062214326-f7eeab2c67d7?w=1200&q=80');
-    background-size:cover;
-    background-attachment:fixed;
-    background-position:center;
+    background:linear-gradient(135deg,#b89968,#a88560,#9b7d58,#8b7355);
+    background-size:400% 400%;
+    animation:gradientShift 15s ease infinite;
     font-family:'Poppins',sans-serif;
     display:flex;
     justify-content:center;
@@ -28,6 +27,18 @@ body{
     position:relative;
 }
 
+@keyframes gradientShift{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
 body::before{
     content:'';
     position:fixed;
@@ -35,9 +46,20 @@ body::before{
     left:0;
     width:100%;
     height:100%;
-    background:linear-gradient(135deg,rgba(139,115,85,.4),rgba(160,130,100,.4));
+    background:radial-gradient(circle at 20% 50%,rgba(255,255,255,.1) 0%,transparent 50%),
+                radial-gradient(circle at 80% 80%,rgba(0,0,0,.15) 0%,transparent 50%);
     pointer-events:none;
     z-index:0;
+    animation:softFloat 20s ease-in-out infinite;
+}
+
+@keyframes softFloat{
+    0%,100%{
+        opacity:.3;
+    }
+    50%{
+        opacity:.5;
+    }
 }
 
 .container{
@@ -45,16 +67,16 @@ body::before{
     max-width:700px;
     height:90vh;
     max-height:800px;
-    background:linear-gradient(135deg,rgba(245,235,220,.92),rgba(240,225,200,.92));
-    backdrop-filter:blur(12px);
-    border-radius:20px;
+    background:linear-gradient(135deg,rgba(248,242,235,.96),rgba(245,238,228,.96));
+    backdrop-filter:blur(15px);
+    border-radius:25px;
     padding:50px;
     text-align:center;
-    box-shadow:0 25px 70px rgba(0,0,0,.5), inset 0 0 30px rgba(0,0,0,.08);
+    box-shadow:0 30px 80px rgba(0,0,0,.3), inset 0 0 40px rgba(255,255,255,.3);
     border:3px solid #d4a574;
     overflow-y:scroll;
     overflow-x:hidden;
-    animation:fade 1.5s ease;
+    animation:fadeIn 1.5s ease;
     position:relative;
     z-index:2;
 }
@@ -71,11 +93,11 @@ body::before{
             0deg,
             transparent,
             transparent 50px,
-            rgba(139,115,85,.02) 50px,
-            rgba(139,115,85,.02) 100px
+            rgba(139,115,85,.015) 50px,
+            rgba(139,115,85,.015) 100px
         );
     pointer-events:none;
-    border-radius:20px;
+    border-radius:25px;
 }
 
 .container::-webkit-scrollbar{
@@ -83,7 +105,7 @@ body::before{
 }
 
 .container::-webkit-scrollbar-track{
-    background:rgba(139,115,85,.1);
+    background:rgba(139,115,85,.08);
     border-radius:10px;
 }
 
@@ -101,9 +123,21 @@ h1{
     font-size:42px;
     color:#6b5d52;
     margin-bottom:25px;
-    text-shadow:0 2px 10px rgba(212, 176, 184, 0.2);
+    text-shadow:0 2px 10px rgba(212, 176, 184, 0.15);
     position:relative;
     z-index:3;
+    animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 p{
@@ -118,9 +152,32 @@ p{
 .section{
     margin-bottom:30px;
     padding-bottom:20px;
-    border-bottom:1px solid rgba(139,115,85,.2);
+    border-bottom:1px solid rgba(139,115,85,.15);
     position:relative;
     z-index:3;
+    animation:fadeInUp 1s ease forwards;
+    opacity:0;
+}
+
+.section:nth-child(1){animation-delay:0.2s;}
+.section:nth-child(2){animation-delay:0.4s;}
+.section:nth-child(3){animation-delay:0.6s;}
+.section:nth-child(4){animation-delay:0.8s;}
+.section:nth-child(5){animation-delay:1s;}
+.section:nth-child(6){animation-delay:1.2s;}
+.section:nth-child(7){animation-delay:1.4s;}
+.section:nth-child(8){animation-delay:1.6s;}
+.section:nth-child(9){animation-delay:1.8s;}
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .section:last-child{
@@ -130,12 +187,13 @@ p{
 .music-player{
     margin:30px 0;
     padding:20px;
-    background:linear-gradient(135deg,rgba(212,165,116,.15),rgba(196,160,168,.15));
-    border-radius:10px;
-    border:1px solid rgba(139,115,85,.3);
-    box-shadow:inset 0 2px 8px rgba(0,0,0,.05);
+    background:linear-gradient(135deg,rgba(212,165,116,.1),rgba(196,160,168,.1));
+    border-radius:15px;
+    border:2px solid rgba(139,115,85,.2);
+    box-shadow:inset 0 2px 15px rgba(0,0,0,.05), 0 8px 25px rgba(0,0,0,.1);
     position:relative;
     z-index:3;
+    backdrop-filter:blur(10px);
 }
 
 .music-player h3{
@@ -151,7 +209,8 @@ p{
     padding-bottom:56.25%;
     height:0;
     overflow:hidden;
-    border-radius:8px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
 .video-container iframe{
@@ -161,7 +220,7 @@ p{
     width:100%;
     height:100%;
     border:none;
-    border-radius:8px;
+    border-radius:12px;
 }
 
 .signature{
@@ -178,22 +237,25 @@ p{
     position:fixed;
     color:#c4a0a8;
     animation:float linear infinite;
-    opacity:.5;
+    opacity:.4;
     pointer-events:none;
-    text-shadow:0 0 8px rgba(212, 176, 184, 0.3);
+    text-shadow:0 0 12px rgba(212, 176, 184, 0.4);
     z-index:1;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.1));
 }
 
 @keyframes float{
     from{
-        transform:translateY(100vh) scale(.5);
+        transform:translateY(100vh) scale(.5) rotate(0deg);
+        opacity:.6;
     }
     to{
-        transform:translateY(-10vh) scale(1.2);
+        transform:translateY(-10vh) scale(1.2) rotate(360deg);
+        opacity:0;
     }
 }
 
-@keyframes fade{
+@keyframes fadeIn{
     from{
         opacity:0;
         transform:translateY(20px);
@@ -214,7 +276,7 @@ p{
     <div class="music-player">
         <h3>🎵 Pamungkas - One Only</h3>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/I5sKt6_zdvw" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.youtube.com/embed/I5sKt6_zdvw?autoplay=1&mute=0" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 
@@ -307,7 +369,7 @@ function createHeart(){
     },12000);
 }
 
-setInterval(createHeart,350);
+setInterval(createHeart,300);
 </script>
 
 </body>
