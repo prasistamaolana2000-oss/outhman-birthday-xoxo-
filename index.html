@@ -15,7 +15,7 @@
 }
 
 body{
-    background:linear-gradient(135deg,#fef6f0,#fde2e4,#f9dcc4);
+    background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
     font-family:'Poppins',sans-serif;
     display:flex;
     justify-content:center;
@@ -29,12 +29,13 @@ body{
     max-width:700px;
     height:90vh;
     max-height:800px;
-    background:rgba(255,255,255,.75);
+    background:rgba(30,30,50,.85);
     backdrop-filter:blur(10px);
-    border-radius:25px;
+    border-radius:15px;
     padding:50px;
     text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+    border:2px solid #e94560;
     overflow-y:scroll;
     overflow-x:hidden;
     animation:fade 1.5s ease;
@@ -45,28 +46,29 @@ body{
 }
 
 .container::-webkit-scrollbar-track{
-    background:rgba(0,0,0,.1);
+    background:rgba(255,255,255,.1);
     border-radius:10px;
 }
 
 .container::-webkit-scrollbar-thumb{
-    background:#b85c7d;
+    background:#e94560;
     border-radius:10px;
 }
 
 .container::-webkit-scrollbar-thumb:hover{
-    background:#a04a66;
+    background:#ff6b7a;
 }
 
 h1{
     font-family:'Playfair Display',serif;
     font-size:42px;
-    color:#b85c7d;
+    color:#e94560;
     margin-bottom:25px;
+    text-shadow:0 2px 10px rgba(233, 69, 96, 0.3);
 }
 
 p{
-    color:#444;
+    color:#e0e0e0;
     line-height:1.9;
     font-size:18px;
     margin-bottom:18px;
@@ -75,7 +77,7 @@ p{
 .section{
     margin-bottom:30px;
     padding-bottom:20px;
-    border-bottom:1px solid rgba(184, 92, 125, 0.2);
+    border-bottom:1px solid rgba(233, 69, 96, 0.3);
 }
 
 .section:last-child{
@@ -87,15 +89,16 @@ p{
     padding-top:30px;
     font-family:'Playfair Display',serif;
     font-size:24px;
-    color:#b85c7d;
+    color:#e94560;
 }
 
 .heart{
     position:fixed;
-    color:#ff7b9c;
+    color:#e94560;
     animation:float linear infinite;
-    opacity:.7;
+    opacity:.6;
     pointer-events:none;
+    text-shadow:0 0 10px rgba(233, 69, 96, 0.5);
 }
 
 @keyframes float{
@@ -123,77 +126,77 @@ p{
 <body>
 
 <div class="container">
-    <h1>Happy Birthday, Outhman 🤍</h1>
+    <h1>Happy Birthday, Outhman 🔥</h1>
 
     <div class="section">
         <p>
-            Hi Outhman, this is your day and I want to say some things.
+            Hey Outhman, this is your day and I want to say some things.
             I'm grateful to have known you.
-            I hope you live your life freely, joyfully, and peacefully.
+            I hope you live your life freely, boldly, and with purpose.
         </p>
     </div>
 
     <div class="section">
         <p>
             I pray that you win in life, achieve all your dreams, and get everything you want.
-            I want to see you at the top, becoming the person you've always wanted to be.
+            I want to see you at the top, becoming the man you've always wanted to be.
         </p>
     </div>
 
     <div class="section">
         <p>
             Thank you for being an important part of my life. Every moment and memory with you truly means the world to me.
-            You've brought so much joy and light into my days.
+            You've brought so much strength and inspiration into my days.
         </p>
     </div>
 
     <div class="section">
         <p>
-            I hope this year brings you wonderful adventures and new experiences.
-            May all your dreams come true and may your life be filled with laughter, love, and endless joy.
+            I hope this year brings you incredible adventures and new opportunities.
+            May all your goals come true and may your journey be filled with victories, passion, and true fulfillment.
         </p>
     </div>
 
     <div class="section">
         <p>
-            You've taught me so many valuable lessons. Your courage, honesty, and kind heart always inspire me 
-            to become a better version of myself. I admire you more than words can express.
+            You've taught me so many valuable lessons about integrity, determination, and resilience. Your strength and honest heart 
+            always inspire me to push harder and become stronger. I truly admire the man you are.
         </p>
     </div>
 
     <div class="section">
         <p>
             On this special day, I want you to know how much your presence means to so many people.
-            You are a precious gift to this world, and your impact is truly remarkable.
+            You are someone truly remarkable, and your impact on everyone around you is undeniable.
         </p>
     </div>
 
     <div class="section">
         <p>
             Happy Birthday, Outhman! 🎂
-            May this day be filled with smiles, laughter, and beautiful moments you'll cherish forever.
-            You deserve all the happiness in the world.
+            May this day be filled with victories, celebration, and unforgettable moments you'll remember forever.
+            You deserve all the success and happiness in the world.
         </p>
     </div>
 
     <div class="section">
         <p>
-            I wish you strength for the challenges ahead, wisdom to make the right choices, 
-            and the determination to achieve everything you set your heart on.
-            The future is bright for someone as wonderful as you.
+            I wish you the strength to conquer every challenge, the wisdom to navigate life's complexities, 
+            and the unwavering determination to achieve everything you dream of.
+            Your future is absolutely limitless.
         </p>
     </div>
 
     <div class="section">
         <p>
-            Thank you for making this world a more colorful and beautiful place with your presence.
-            Every day with you is truly a blessing, and I'm honored to know you.
+            Thank you for making this world a stronger and better place with your presence.
+            Every day with you is truly a privilege, and I'm honored to know someone as outstanding as you.
         </p>
     </div>
 
     <div class="signature">
-        With all my love and best wishes,<br>
-        <b>— Sista —</b> 💗
+        With all my respect and best wishes,<br>
+        <b>— Sista —</b> 🔥
     </div>
 </div>
 
@@ -201,7 +204,7 @@ p{
 function createHeart(){
     const heart=document.createElement("div");
     heart.className="heart";
-    heart.innerHTML="🤍";
+    heart.innerHTML="❤️";
 
     heart.style.left=Math.random()*100+"vw";
     heart.style.fontSize=(15+Math.random()*25)+"px";
