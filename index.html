@@ -203,10 +203,12 @@ p{
     font-family:'Playfair Display',serif;
 }
 
-.spotify-embed{
+.audio-player{
     width:100%;
-    max-width:100%;
     margin-top:10px;
+    padding:10px;
+    background:rgba(255,255,255,.5);
+    border-radius:8px;
 }
 
 .signature{
@@ -256,12 +258,18 @@ p{
 
 <body>
 
+<audio id="bgMusic" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d3d3f0b3f3.mp3?filename=pamungkas-one-only-123456.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container">
     <h1>Happy Birthday, Outhman ❤️</h1>
 
     <div class="music-player">
-        <h3>🎵 Pamungkas - One Only</h3>
-        <iframe class="spotify-embed" src="https://open.spotify.com/embed/track/1wAUUY4I9Lr2xDqBbdL6yf?utm_source=generator&autoplay=1" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <h3>🎵 Pamungkas - One Only (Playing in Background)</h3>
+        <audio class="audio-player" controls>
+            <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d3d3f0b3f3.mp3?filename=pamungkas-one-only-123456.mp3" type="audio/mpeg">
+        </audio>
     </div>
 
     <div class="section">
@@ -337,6 +345,23 @@ p{
 </div>
 
 <script>
+// Autoplay musik di background
+document.addEventListener('DOMContentLoaded', function() {
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.3;
+    bgMusic.play().catch(error => {
+        console.log('Autoplay blocked, click anywhere to enable');
+    });
+});
+
+// Enable autoplay on user interaction
+document.addEventListener('click', function() {
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic.paused) {
+        bgMusic.play();
+    }
+}, { once: true });
+
 function createHeart(){
     const heart=document.createElement("div");
     heart.className="heart";
