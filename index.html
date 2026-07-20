@@ -24,16 +24,38 @@ body{
     overflow:hidden;
 }
 
-.card{
+.container{
     width:90%;
     max-width:700px;
+    height:90vh;
+    max-height:800px;
     background:rgba(255,255,255,.75);
     backdrop-filter:blur(10px);
     border-radius:25px;
     padding:50px;
     text-align:center;
     box-shadow:0 20px 50px rgba(0,0,0,.15);
+    overflow-y:scroll;
+    overflow-x:hidden;
     animation:fade 1.5s ease;
+}
+
+.container::-webkit-scrollbar{
+    width:8px;
+}
+
+.container::-webkit-scrollbar-track{
+    background:rgba(0,0,0,.1);
+    border-radius:10px;
+}
+
+.container::-webkit-scrollbar-thumb{
+    background:#b85c7d;
+    border-radius:10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover{
+    background:#a04a66;
 }
 
 h1{
@@ -50,18 +72,30 @@ p{
     margin-bottom:18px;
 }
 
+.section{
+    margin-bottom:30px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(184, 92, 125, 0.2);
+}
+
+.section:last-child{
+    border-bottom:none;
+}
+
 .signature{
     margin-top:35px;
+    padding-top:30px;
     font-family:'Playfair Display',serif;
     font-size:24px;
     color:#b85c7d;
 }
 
 .heart{
-    position:absolute;
+    position:fixed;
     color:#ff7b9c;
     animation:float linear infinite;
     opacity:.7;
+    pointer-events:none;
 }
 
 @keyframes float{
@@ -88,23 +122,78 @@ p{
 
 <body>
 
-<div class="card">
+<div class="container">
     <h1>Happy Birthday, Outhman 🤍</h1>
 
-    <p>
-        Hi Outhman, this is your day and I want to say some things.
-        I'm grateful to have known you.
-        I hope you live your life freely, joyfully, and peacefully.
-    </p>
+    <div class="section">
+        <p>
+            Hi Outhman, this is your day and I want to say some things.
+            I'm grateful to have known you.
+            I hope you live your life freely, joyfully, and peacefully.
+        </p>
+    </div>
 
-    <p>
-        I pray that you win in life, achieve all your dreams, and get everything you want.
-        I want to see you at the top, becoming the person you've always wanted to be.
-    </p>
+    <div class="section">
+        <p>
+            I pray that you win in life, achieve all your dreams, and get everything you want.
+            I want to see you at the top, becoming the person you've always wanted to be.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            Thank you for being an important part of my life. Every moment and memory with you truly means the world to me.
+            You've brought so much joy and light into my days.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            I hope this year brings you wonderful adventures and new experiences.
+            May all your dreams come true and may your life be filled with laughter, love, and endless joy.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            You've taught me so many valuable lessons. Your courage, honesty, and kind heart always inspire me 
+            to become a better version of myself. I admire you more than words can express.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            On this special day, I want you to know how much your presence means to so many people.
+            You are a precious gift to this world, and your impact is truly remarkable.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            Happy Birthday, Outhman! 🎂
+            May this day be filled with smiles, laughter, and beautiful moments you'll cherish forever.
+            You deserve all the happiness in the world.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            I wish you strength for the challenges ahead, wisdom to make the right choices, 
+            and the determination to achieve everything you set your heart on.
+            The future is bright for someone as wonderful as you.
+        </p>
+    </div>
+
+    <div class="section">
+        <p>
+            Thank you for making this world a more colorful and beautiful place with your presence.
+            Every day with you is truly a blessing, and I'm honored to know you.
+        </p>
+    </div>
 
     <div class="signature">
-        With love,<br>
-        <b>— Sista —</b>
+        With all my love and best wishes,<br>
+        <b>— Sista —</b> 💗
     </div>
 </div>
 
